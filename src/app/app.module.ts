@@ -11,6 +11,14 @@ import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 
+export const firebaseConfig = {
+  apiKey: '',
+  authDomain: '',
+  databaseUrl: '',
+  storageBucket: '',
+  messagingSenderId: ''
+};
+
 
 @NgModule({
   declarations: [
@@ -20,7 +28,10 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
     ItemsFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
